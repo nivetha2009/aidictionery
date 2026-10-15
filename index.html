@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="TaskPilot AI recommends the most suitable AI tools for any task you describe.">
+<meta name="theme-color" content="#5b5bf0">
+<link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+<title>TaskPilot AI – Find the Right AI for Every Task</title>
+<link rel="stylesheet" href="src/styles.css"></head><body>
+<header><nav><div class="logo" onclick="go('home')"><svg width="30" height="30" viewBox="0 0 32 32"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b5bf0"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg)"/><path d="M7 16 25 7l-5 18-4-7z" fill="#fff"/></svg>TaskPilot AI</div>
+<a data-p="home" onclick="go('home')">Home</a><a data-p="explore" onclick="go('explore')">Explore Tools</a><a data-p="compare" onclick="go('compare')">Compare Tools</a><a data-p="about" onclick="go('about')">About</a></nav></header>
+<main class="w" id="app"></main>
+<footer><div class="w">© TaskPilot AI · Recommendations come from a local catalogue and may be out of date. Check each official site for current pricing and features.</div></footer>
+<div id="tray"></div>
+<script src="src/data.js"></script>
+<script src="src/app.js"></script></body></html>

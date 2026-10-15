@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TaskPilot AI – Find the Right AI for Every Task</title>
+<style>
+:root{--bg:#f7f7fc;--card:#fff;--tx:#14142b;--mu:#5d5d7a;--ac:#5b5bf0;--ac2:#8b5cf6;--bd:#e4e4f2;--ok:#12805c;--sh:0 4px 20px rgba(60,60,140,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0f1c;--card:#1a1a2e;--tx:#eeeefa;--mu:#a3a3c2;--bd:#2c2c48;--sh:0 4px 20px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f0f1c;--card:#1a1a2e;--tx:#eeeefa;--mu:#a3a3c2;--bd:#2c2c48;--sh:0 4px 20px rgba(0,0,0,.4);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+.w{max-width:1080px;margin:auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);border-bottom:1px solid var(--bd);z-index:5}
+nav{display:flex;align-items:center;gap:6px;padding:12px 20px;max-width:1080px;margin:auto;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;margin-right:auto;cursor:pointer}
+nav a{padding:7px 13px;border-radius:99px;color:var(--mu);cursor:pointer;font-weight:600;font-size:14px;transition:.2s}
+nav a:hover,nav a.on{background:rgba(91,91,240,.12);color:var(--ac)}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;margin:0 0 14px;letter-spacing:-1px}
+h1 span{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:24px;margin:34px 0 14px}.hero{text-align:center;padding:50px 0 20px}.hero p{color:var(--mu);max-width:620px;margin:0 auto 22px;font-size:18px}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:18px;box-shadow:var(--sh);padding:16px;max-width:760px;margin:auto}
+textarea{width:100%;min-height:92px;border:0;outline:0;resize:vertical;font:inherit;background:transparent;color:var(--tx)}
+.btn{background:linear-gradient(90deg,var(--ac),var(--ac2));color:#fff;border:0;border-radius:12px;padding:12px 22px;font-weight:700;font-size:16px;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(91,91,240,.4)}
+.g{background:transparent;color:var(--ac);border:1px solid var(--bd);border-radius:10px;padding:7px 12px;font-weight:600;font-size:13px;cursor:pointer;transition:.2s;text-decoration:none;display:inline-block}
+.g:hover,.g.on{border-color:var(--ac);background:rgba(91,91,240,.1)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.chip{padding:7px 13px;border:1px solid var(--bd);border-radius:99px;background:var(--card);cursor:pointer;font-size:13.5px;color:var(--mu);transition:.2s}.chip:hover{border-color:var(--ac);color:var(--ac);transform:translateY(-1px)}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cat{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;cursor:pointer;transition:.2s;font-weight:700}.cat:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--ac)}.cat i{display:block;font-style:normal;font-size:24px;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.tool{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:9px;transition:.2s}.tool:hover{transform:translateY(-3px);border-color:var(--ac)}
+.tool h3{margin:0;font-size:19px;display:flex;justify-content:space-between;gap:8px;align-items:center}.tool p{margin:0;font-size:14.5px}.mu{color:var(--mu)}
+.tag{font-size:11.5px;padding:3px 9px;border-radius:99px;background:rgba(91,91,240,.12);color:var(--ac);font-weight:700}.tag.b{background:rgba(18,128,92,.14);color:var(--ok)}
+.bar{height:7px;background:var(--bd);border-radius:9px;overflow:hidden}.bar b{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2))}
+ul{margin:0;padding-left:18px;font-size:14px}.pc{font-size:13.5px}.pc div{margin:2px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.fl{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}.fl label{font-size:12px;color:var(--mu);display:flex;flex-direction:column;gap:3px;font-weight:600}
+select,input[type=text]{padding:8px 10px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:14px}
+.err{color:#d6336c;font-size:14px;margin-top:8px;font-weight:600}.sp{width:36px;height:36px;border:4px solid var(--bd);border-top-color:var(--ac);border-radius:50%;animation:r .8s linear infinite;margin:40px auto}@keyframes r{to{transform:rotate(360deg)}}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--bd);border-radius:16px}table{border-collapse:collapse;width:100%;min-width:560px}th,td{padding:12px 14px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top;font-size:14px}th:first-child{width:130px;color:var(--mu)}
+.tray{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--tx);color:var(--bg);padding:10px 14px;border-radius:99px;display:flex;gap:10px;align-items:center;box-shadow:var(--sh);z-index:9;font-size:14px}.tray button{border:0;border-radius:99px;padding:7px 14px;background:var(--ac);color:#fff;font-weight:700;cursor:pointer}
+footer{border-top:1px solid var(--bd);margin-top:50px;padding:26px 0 90px;color:var(--mu);font-size:14px;text-align:center}
+.empty{text-align:center;color:var(--mu);padding:30px;background:var(--card);border:1px dashed var(--bd);border-radius:16px}
+</style></head><body>
+<header><nav><div class="logo" onclick="go('home')"><svg width="30" height="30" viewBox="0 0 32 32"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b5bf0"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg)"/><path d="M7 16 25 7l-5 18-4-7z" fill="#fff"/></svg>TaskPilot AI</div>
+<a data-p="home" onclick="go('home')">Home</a><a data-p="explore" onclick="go('explore')">Explore Tools</a><a data-p="compare" onclick="go('compare')">Compare Tools</a><a data-p="about" onclick="go('about')">About</a></nav></header>
+<main class="w" id="app"></main>
+<footer><div class="w">© TaskPilot AI · Recommendations come from a local catalogue and may be out of date. Check each official site for current pricing and features.</div></footer>
+<div id="tray"></div>
+<script>
+const T=(n,u,c,p,l,m,pu,k,f,pr,co,g)=>({n,u,c,p,l,m,pu,k,f,pr,co,g});
+const TOOLS=[
+T('ChatGPT','https://chatgpt.com',['Writing','Research','Coding','Business','Studying'],'Freemium',1,[5,4,4,4],'General-purpose AI assistant for writing, analysis, coding and brainstorming.',['write','essay','email','resume','summar','idea','code','explain','plan','data','translate','mcq','quiz','notes'],['Chat with files and images','Data analysis and code execution'],'Handles almost any task','Can state errors confidently; verify facts',1),
+T('Claude','https://claude.ai',['Writing','Coding','Research','Studying'],'Freemium',1,[5,4,5,4],'AI assistant strong at long documents, careful writing and coding.',['write','essay','resume','summar','paper','pdf','code','analy','notes','mcq','quiz','document','edit'],['Reads long documents and PDFs','Builds small apps and pages'],'Great with long, detailed material','No built-in image generation',1),
+T('Gemini','https://gemini.google.com',['Research','Writing','Studying'],'Freemium',1,[5,4,4,4],'Google\'s assistant with web access and Workspace integration.',['research','summar','search','google','explain','study','translate','image'],['Works with Google apps','Multimodal input'],'Tight Google integration','Top features need a paid plan',1),
+T('Perplexity','https://www.perplexity.ai',['Research'],'Freemium',1,[5,5,4,3],'Answer engine that cites its web sources.',['research','search','source','citation','news','fact','compare','find','academic'],['Answers with source links','Follow-up questions'],'Easy to verify answers','Weaker for creative generation'),
+T('NotebookLM','https://notebooklm.google.com',['Studying','Research'],'Free',1,[5,4,4,4],'Google tool that answers questions grounded in the documents you upload.',['pdf','notes','study','summar','paper','mcq','quiz','flashcard','document','video','podcast','audio','source','educational','lecture'],['Study guides, quizzes and flashcards','Audio and video overviews'],'Stays grounded in your own files','Limited to the sources you add'),
+T('ChatPDF','https://www.chatpdf.com',['Studying','Research'],'Freemium',1,[5,5,3,2],'Chat with a PDF and ask questions about its content.',['pdf','document','paper','summar','question','mcq','quiz'],['Ask questions about any PDF','Answers point to the source'],'Extremely simple','Narrow scope; free limits apply'),
+T('Gamma','https://gamma.app',['Presentations','Business'],'Freemium',1,[5,5,4,3],'Generates presentations, documents and web pages from a prompt.',['presentation','slide','deck','ppt','pitch','document','powerpoint','webpage'],['Create decks from text or a document','Export to PowerPoint or PDF'],'Fast first drafts','Layouts can look similar'),
+T('Canva','https://www.canva.com',['Design','Presentations','Marketing','Video'],'Freemium',1,[5,5,4,3],'Design platform with templates and built-in AI tools.',['design','poster','logo','social','instagram','flyer','presentation','slide','template','handwritten','brand','image','video','reel','campaign'],['Huge template library','Magic design and editing tools'],'Beginner friendly','Some AI features are paid only'),
+T('Midjourney','https://www.midjourney.com',['Design','Marketing'],'Paid',2,[3,3,5,4],'High-quality AI image generation.',['image','art','illustration','concept','poster','marketing','campaign','visual','photo'],['Distinctive, polished visuals','Style and reference controls'],'Stunning output quality','Paid; prompt learning curve'),
+T('Adobe Firefly','https://firefly.adobe.com',['Design','Marketing'],'Freemium',1,[4,4,4,4],'Adobe\'s generative AI for images and edits.',['image','photo','edit','design','banner','marketing','campaign','logo','generative'],['Text-to-image','Generative fill and edit'],'Fits Adobe workflows','Free credits are limited'),
+T('Ideogram','https://ideogram.ai',['Design','Marketing'],'Freemium',1,[4,4,4,3],'Image generator known for readable text inside images.',['image','poster','logo','text','typography','banner','marketing','campaign'],['Good text rendering','Style presets'],'Handles lettering well','Fewer editing tools'),
+T('CapCut','https://www.capcut.com',['Video'],'Freemium',1,[5,5,4,3],'Video editor with AI captions, templates and effects.',['video','edit','reel','instagram','tiktok','short','caption','subtitle','clip'],['Auto captions','Short-form video templates'],'Quick social video edits','Some features need Pro'),
+T('Runway','https://runwayml.com',['Video','Design'],'Freemium',2,[3,3,5,5],'AI video generation and editing suite.',['video','generate','animation','clip','film','motion','ad'],['Text/image-to-video','AI video editing tools'],'Cutting-edge video generation','Credits run out quickly'),
+T('Descript','https://www.descript.com',['Video','Audio'],'Freemium',2,[4,4,4,4],'Edit video and audio by editing its transcript.',['video','podcast','transcri','edit','audio','youtube','caption'],['Text-based editing','Filler word removal'],'Makes editing intuitive','Heavy on large projects'),
+T('Pictory','https://pictory.ai',['Video','Marketing'],'Paid',1,[5,5,3,3],'Turns scripts and articles into videos.',['video','blog','script','educational','explainer','youtube','social','topic'],['Text-to-video','Auto captions'],'Quick explainer videos','Paid; stock-footage look'),
+T('Synthesia','https://www.synthesia.io',['Video','Business'],'Paid',1,[5,4,4,4],'Creates videos with AI avatars and voiceovers.',['video','avatar','training','educational','explainer','presenter','corporate','topic'],['AI avatars','Multilingual voiceover'],'No camera needed','Paid; avatars can feel stiff'),
+T('ElevenLabs','https://elevenlabs.io',['Audio'],'Freemium',1,[4,4,5,4],'Realistic AI voice generation and narration.',['voice','voiceover','narration','audio','speech','dub','podcast','audiobook'],['Text-to-speech','Voice cloning (with permission)'],'Natural-sounding voices','Usage limits on free plan'),
+T('Suno','https://suno.com',['Audio'],'Freemium',1,[5,4,4,3],'Generates songs with vocals from a text prompt.',['music','song','lyrics','jingle','beat'],['Text-to-song','Lyrics and style control'],'Fun and fast','Output can be inconsistent'),
+T('Otter.ai','https://otter.ai',['Audio','Business'],'Freemium',1,[5,5,4,3],'Records and transcribes meetings with summaries.',['meeting','transcri','notes','lecture','record','minutes','interview'],['Live transcription','Automatic summaries'],'Handy for meetings','Accuracy dips with noisy audio'),
+T('GitHub Copilot','https://github.com/features/copilot',['Coding'],'Freemium',2,[4,5,4,4],'AI pair programmer inside your editor.',['code','coding','debug','program','autocomplete','developer','refactor','test'],['Code completion in your IDE','Chat about your code'],'Boosts everyday coding speed','Suggestions need review'),
+T('Lovable','https://lovable.dev',['Coding','Design'],'Freemium',1,[5,5,4,3],'Builds web apps from a plain-language description.',['website','app','no code','without cod','build','landing page','prototype','mvp'],['Describe an app, get a working draft','Iterate by chatting'],'No coding needed','Complex apps need developer help'),
+T('Framer','https://www.framer.com',['Design'],'Freemium',2,[4,4,5,4],'Visual website builder with AI page generation.',['website','landing page','portfolio','design','no code','without cod'],['AI page generation','Visual editor and hosting'],'Polished, designer-grade sites','Learning curve for beginners'),
+T('Microsoft Copilot','https://copilot.microsoft.com',['Business','Writing','Research'],'Free',1,[5,4,3,3],'Microsoft\'s free everyday AI assistant.',['search','write','image','summar','email','microsoft','windows','ask'],['Chat and web answers','Image generation'],'Free and easy','Less depth than paid tools',1),
+T('Microsoft 365 Copilot','https://www.microsoft.com/microsoft-365/copilot',['Business','Data Analysis','Presentations','Writing'],'Paid',2,[4,4,4,5],'AI built into Word, Excel, PowerPoint and Outlook.',['excel','word','powerpoint','outlook','spreadsheet','data','report','office','email','formula'],['Formulas and analysis in Excel','Draft decks and documents'],'Works inside Office apps','Needs a Microsoft 365 licence'),
+T('Julius AI','https://julius.ai',['Data Analysis'],'Freemium',2,[4,4,4,4],'Chat-based data analyst for spreadsheets and CSVs.',['data','excel','csv','spreadsheet','chart','analy','financ','regression','graph','statistic'],['Upload data and ask questions','Charts and statistics'],'Fast insights without code','Check results on critical work'),
+T('Elicit','https://elicit.com',['Research','Studying'],'Freemium',2,[4,3,4,4],'AI research assistant for finding and summarising papers.',['paper','literature','research','academic','review','citation','summar','scientific'],['Search academic papers','Extract data from studies'],'Built for literature reviews','Best features need paid plan'),
+T('Quizlet','https://quizlet.com',['Studying'],'Freemium',1,[5,5,3,3],'Flashcards and practice tests with AI study tools.',['flashcard','quiz','study','exam','mcq','revision','test','learn'],['Flashcards and practice tests','Study modes'],'Familiar for students','AI features are limited on free plan'),
+T('Grammarly','https://www.grammarly.com',['Writing'],'Freemium',1,[5,5,4,3],'Writing assistant for grammar, tone and rewriting.',['grammar','proofread','rewrite','tone','edit','email','essay','writing','resume'],['Grammar and clarity checks','Tone suggestions'],'Works across apps','Not for generating long content'),
+T('Jasper','https://www.jasper.ai',['Marketing','Writing'],'Paid',2,[4,4,4,4],'AI content platform for marketing teams.',['marketing','campaign','ad copy','blog','seo','brand','social','copywriting','content'],['Brand voice','Campaign content workflows'],'Built for marketing teams','Paid; overkill for solo use'),
+T('Kickresume','https://www.kickresume.com',['Writing','Business'],'Freemium',1,[5,5,4,3],'Resume and cover-letter builder with AI writing.',['resume','cv','cover letter','job','career','application'],['Resume templates','AI-written bullet points'],'Purpose-built for resumes','Free plan has limits')];
+const CS={Writing:['write','writing','essay','blog','article','email','resume','letter','grammar','copy'],Studying:['study','notes','mcq','quiz','exam','flashcard','learn','homework','revision','student'],Coding:['code','coding','app','program','debug','develop','website','software'],Research:['research','paper','summar','literature','citation','academic'],Design:['design','image','logo','poster','graphic','illustration','photo','website'],Video:['video','reel','youtube','instagram','edit','clip','animation','shorts'],Audio:['audio','voice','music','podcast','transcri','song','speech'],Presentations:['presentation','slides','deck','ppt','pitch'],Business:['business','sales','report','meeting','workflow','startup','resume'],'Data Analysis':['data','excel','spreadsheet','csv','analy','chart','financ','dashboard'],Marketing:['marketing','campaign','social','seo','brand','instagram','copywriting']};
+const ICON={Writing:'✍️',Studying:'🎓',Coding:'💻',Research:'🔬',Design:'🎨',Video:'🎬',Audio:'🎧',Presentations:'📊',Business:'💼','Data Analysis':'📈',Marketing:'📣'};
+const EX=['Create a professional resume','Generate MCQs from a PDF','Convert a PDF into a presentation','Create a website without coding','Summarise a research paper','Edit a video for Instagram','Analyse financial data in Excel','Generate images for a marketing campaign','Create handwritten-style study notes','Turn a topic into an educational video'];
+const S={q:'',res:null,f:{budget:'Any',exp:'Any',pri:'Any',cat:'Any'},cmp:[],hist:[],page:'home',load:false,err:'',ef:'Any',es:''};
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function recommend(q,f){q=q.toLowerCase();const ch=new Set(Object.keys(CS).filter(c=>CS[c].some(w=>q.includes(w))));
+let list=TOOLS.map(t=>{const hits=t.k.filter(k=>q.includes(k));let s=hits.length*3;t.c.forEach(c=>ch.has(c)&&(s+=2));return{t,hits,s}}).filter(x=>x.s>0),general=false;
+if(!list.length){general=true;list=TOOLS.filter(t=>t.g).map(t=>({t,hits:[],s:1}))}
+list=list.filter(x=>(f.budget=='Any'||x.t.p==f.budget)&&(f.cat=='Any'||x.t.c.includes(f.cat)));
+const L={Beginner:1,Intermediate:2,Advanced:3}[f.exp]||3,pi={'Ease of Use':0,Speed:1,Quality:2,'Advanced Features':3}[f.pri];
+list.forEach(x=>{if(pi!=null)x.s*=1+.12*(x.t.m[pi]-3);x.s*=1-.15*Math.max(0,x.t.l-L)});
+list.sort((a,b)=>b.s-a.s);const mx=list.length?list[0].s:1;list.forEach(x=>x.rel=Math.max(35,Math.round(35+63*x.s/mx)));
+return{list,general}}
+function go(p){S.page=p;render();scrollTo(0,0)}
+function setQ(v){S.q=v}function ex(i){S.q=EX[i];render();run()}
+function cat(c){S.q=c;S.f.cat=c;render();run()}
+function setF(k,v){S.f[k]=v;if(S.res)S.res=recommend(S.q,S.f);render()}
+function run(){const q=($('#q')?$('#q').value:S.q).trim();S.q=q;S.err='';
+if(!q){S.err='Please describe a task first, for example “Summarise a research paper”.';render();return}
+if(q.length<3){S.err='That is too short. Add a few more words about your task.';render();return}
+S.load=true;S.res=null;render();$('#res').scrollIntoView({behavior:'smooth'});
+setTimeout(()=>{try{S.res=recommend(q,S.f);S.hist=[q,...S.hist.filter(h=>h!=q)].slice(0,6)}catch(e){S.err='Something went wrong. Please try again.'}S.load=false;render()},650)}
+function tog(n){const i=S.cmp.indexOf(n);if(i>-1)S.cmp.splice(i,1);else if(S.cmp.length>=3){alert('You can compare up to three tools. Remove one first.');return}else S.cmp.push(n);render()}
+function clr(){S.hist=[];render()}
+function dots(n){return '●'.repeat(n)+'○'.repeat(5-n)}
+function card(t,x){x=x||{};const on=S.cmp.includes(t.n);return `<article class="tool"><h3>${esc(t.n)}<span>${x.b?`<span class="tag b">${x.b}</span> `:''}<span class="tag">${t.p}</span></span></h3>
+${x.rel?`<div><div class="mu" style="font-size:12px;font-weight:700;margin-bottom:3px">Match ${x.rel}%</div><div class="bar"><b style="width:${x.rel}%"></b></div></div>`:''}
+<p>${esc(t.pu)}</p>${x.rel?`<p class="mu"><b>Why it fits:</b> ${x.hits&&x.hits.length?`matches “${esc(x.hits.slice(0,3).join(', '))}” and is built for ${esc(t.c.slice(0,2).join(' & ').toLowerCase())}.`:'a solid general-purpose option when no specialised tool matches.'}</p>`:''}
+<ul>${t.f.map(f=>`<li>${esc(f)}</li>`).join('')}</ul><div class="pc"><div style="color:var(--ok)">＋ ${esc(t.pr)}</div><div style="color:#d6336c">－ ${esc(t.co)}</div></div>
+<div class="mu" style="font-size:12.5px">Ease ${dots(t.m[0])} · Experience: ${['','Beginner','Intermediate','Advanced'][t.l]}</div>
+<div class="row"><a class="g" href="${t.u}" target="_blank" rel="noopener">Official site ↗</a><button class="g ${on?'on':''}" onclick="tog('${t.n}')">${on?'✓ Added':'+ Compare'}</button></div></article>`}
+function sel(k,l,o){return `<label>${l}<select onchange="setF('${k}',this.value)">${['Any',...o].map(v=>`<option ${S.f[k]==v?'selected':''}>${v}</option>`).join('')}</select></label>`}
+function results(){if(S.load)return '<div class="sp" role="status" aria-label="Loading"></div><p class="mu" style="text-align:center">Matching your task against the catalogue…</p>';
+if(!S.res)return '';const{list,general}=S.res;const top=list.slice(0,5),alt=list.slice(5,8);
+const free=top.find(x=>x.t.p=='Free'||x.t.p=='Freemium');
+let h=`<h2>Recommendations for “${esc(S.q)}”</h2><div class="fl">${sel('budget','Budget',['Free','Freemium','Paid'])}${sel('exp','Experience',['Beginner','Intermediate','Advanced'])}${sel('pri','Priority',['Speed','Quality','Ease of Use','Advanced Features'])}${sel('cat','Category',Object.keys(CS))}</div>`;
+if(general)h+='<p class="mu">No close keyword match, so these are versatile general-purpose assistants. Try adding more detail.</p>';
+if(!top.length)return h+'<div class="empty">No tools match these filters. Try relaxing the budget or category filter.</div>';
+h+=`<div class="grid">${top.map((x,i)=>card(x.t,{rel:x.rel,hits:x.hits,b:i==0?'Best overall':(free&&x==free?'Best free':'')})).join('')}</div>`;
+if(free&&top[0]!=free&&false)h+='';
+if(alt.length)h+=`<h2>Alternatives</h2><div class="grid">${alt.map(x=>card(x.t,{rel:x.rel,hits:x.hits})).join('')}</div>`;return h}
+const pages={
+home(){return `<section class="hero"><h1>Find the Right <span>AI</span> for Every Task.</h1><p>Describe what you want to get done and TaskPilot AI matches it to the most suitable AI tools from a curated catalogue, ranked by fit.</p>
+<div class="box"><textarea id="q" placeholder="e.g. Turn my lecture PDF into a quiz…" oninput="setQ(this.value)" onkeydown="if(event.key=='Enter'&&(event.ctrlKey||event.metaKey))run()">${esc(S.q)}</textarea><div style="text-align:right"><button class="btn" onclick="run()">Find the Best AI Tools</button></div>${S.err?`<div class="err" role="alert">${esc(S.err)}</div>`:''}</div>
+<div class="chips">${EX.map((e,i)=>`<span class="chip" onclick="ex(${i})">${e}</span>`).join('')}</div></section>
+<div id="res">${results()}</div>
+${S.hist.length?`<h2>Recent searches <button class="g" onclick="clr()" style="margin-left:8px">Clear history</button></h2><div class="chips" style="justify-content:flex-start">${S.hist.map(h=>`<span class="chip" onclick="S.q=this.textContent;render();run()">${esc(h)}</span>`).join('')}</div>`:''}
+<h2>Popular task categories</h2><div class="cats">${Object.keys(CS).map(c=>`<div class="cat" onclick="cat('${c}')"><i>${ICON[c]}</i>${c}</div>`).join('')}</div>`},
+explore(){const l=TOOLS.filter(t=>(S.ef=='Any'||t.c.includes(S.ef))&&(t.n+t.pu+t.k.join(' ')).toLowerCase().includes(S.es.toLowerCase()));
+return `<h2>Explore Tools</h2><div class="fl"><label>Search<input type="text" id="es" value="${esc(S.es)}" placeholder="Tool or keyword" oninput="S.es=this.value;render();$('#es').focus();$('#es').setSelectionRange(S.es.length,S.es.length)"></label><label>Category<select onchange="S.ef=this.value;render()">${['Any',...Object.keys(CS)].map(v=>`<option ${S.ef==v?'selected':''}>${v}</option>`).join('')}</select></label></div>
+${l.length?`<div class="grid">${l.map(t=>card(t)).join('')}</div>`:'<div class="empty">No tools found. Try a different keyword or category.</div>'}`},
+compare(){const c=S.cmp.map(n=>TOOLS.find(t=>t.n==n));if(!c.length)return `<h2>Compare Tools</h2><div class="empty">Nothing to compare yet. Use “+ Compare” on up to three tools in <a href="#" onclick="go('explore');return false" style="color:var(--ac)">Explore Tools</a> or in your results.</div>`;
+const r=(l,f)=>`<tr><th>${l}</th>${c.map(t=>`<td>${f(t)}</td>`).join('')}</tr>`;
+return `<h2>Compare Tools</h2><div class="tbl"><table><tr><th></th>${c.map(t=>`<th style="color:var(--tx);font-size:17px">${esc(t.n)}<br><button class="g" onclick="tog('${t.n}')">Remove</button></th>`).join('')}</tr>
+${r('Main purpose',t=>esc(t.pu))}${r('Useful features',t=>'<ul>'+t.f.map(f=>`<li>${esc(f)}</li>`).join('')+'</ul>')}${r('Pricing',t=>`<span class="tag">${t.p}</span>`)}${r('Ease of use',t=>dots(t.m[0]))}${r('Best for',t=>esc(t.c.join(', ')))}${r('Strengths',t=>esc(t.pr))}${r('Limitations',t=>esc(t.co))}${r('Website',t=>`<a class="g" href="${t.u}" target="_blank" rel="noopener">Visit ↗</a>`)}</table></div>`},
+about(){return `<h2>About TaskPilot AI</h2><div class="box" style="max-width:720px;margin:0"><p>TaskPilot AI helps you choose an AI tool by describing the job instead of browsing hundreds of products.</p><p><b>How it works:</b> your text is matched against keywords and categories for ${TOOLS.length} real tools. Your filters then narrow or re-rank the list. It runs entirely in your browser, with no live AI model and no API key.</p><p><b>Please note:</b> pricing categories are general (Free, Freemium, Paid) and tools change often. Always confirm details on the official site.</p><button class="btn" onclick="go('home')">Try it now</button></div>`}};
+function render(){$('#app').innerHTML=pages[S.page]();document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.p==S.page));
+$('#tray').innerHTML=S.cmp.length&&S.page!='compare'?`<div class="tray">${S.cmp.length}/3 selected <button onclick="go('compare')">Compare</button></div>`:''}
+render();
+</script></body></html>
